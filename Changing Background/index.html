@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Changing Background</title>
+    <style>
+      body {
+        background-color: #c98e7c;
+        overflow: hidden;
+
+      }
+      .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+      }
+
+      .start-btn {
+        padding: 10px;
+        font-size: larger;
+        background-color: green;
+        color: white;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        width: 200px;
+      }
+      .stop-btn {
+        padding: 10px;
+        background-color: red;
+        font-size: larger;
+        margin-left: 10px;
+        color: white;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="heading-div">
+        <h1>Changing Background</h1>
+      </div>
+      <div>
+        <button class="start-btn" id="start">Start</button>
+        <button class="stop-btn" id="stop">Stop</button>
+      </div>
+    </div>
+    <script>
+      let startBtn = document.getElementById("start");
+      let stopBtn = document.getElementById("stop");
+      function randomColor() {
+        const hex = "0987654321ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += hex[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+      let interval;
+      startBtn.addEventListener("click", () => {
+        if (!interval) {
+          interval = setInterval(changedColor, 1000);
+        }
+
+        function changedColor() {
+          document.body.style.backgroundColor = randomColor();
+        }
+      });
+
+      stopBtn.addEventListener("click", () => {
+        clearInterval(interval);
+        interval = null;
+      });
+
+     
+    </script>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+   min-height: 100vh;
+   background:linear-gradient(135deg,#153677,#4e085f) ;
+   padding: 10px;
+    
+}
+
+.todo {
+    width: 100%;
+    max-width: 540px;
+    height: 50vh;
+    margin: 100px  auto 20px;
+    background-color: white;
+    padding: 40px 30px  70px;
+    border-radius: 10px;
+
+}
+.todo h2{
+    color:#002765;
+   /* display: flex;
+   align-items: center; */
+   margin-bottom: 20px;
+   text-align: center;
+}
+.flex{
+    display: flex;
+   
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 30px;
+    margin-bottom: 25px;
+    padding-left: 20px;
+    background-color: #edeef0;
+
+}
+.flex input{
+    flex:1;
+    padding: 10px;
+    font-weight: 14px;
+    border: none;
+    outline: none;
+    background:transparent;
+    font-size: 17px;
+    
+}
+.add{
+    padding: 16px 50px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    font-size: 17px;
+     color: white;
+     background:#ff5945;
+     cursor: pointer;
+
+    
+}
+
+
+ul li{
+    font-size: 20px;
+    font-weight: bold;
+    /* padding: 12px 8px 12px 50px; */
+    user-select: none ;
+    cursor: pointer;
+    margin: 10px;
+}
+.stylebtn{
+   position: absolute;
+   right: 390px;
+   width: auto;
+   padding: 10px;
+   height : auto;
+   font-size: 10px;
+   color: #fff;
+   background: #a737e7;
+   text-align: center;
+   border-radius: 40px;
+   border: none;
+   outline: none;
+}
+.stylebtn2{
+    position: absolute;
+   right: 430px;
+   width: auto;
+   padding: 10px;
+   height : auto;
+   font-size: 10px;
+   color: #fff;
+   background: #a737e7;
+   text-align: center;
+   border-radius: 40px;
+   border: none;
+   outline: none;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: blueviolet;
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+
+        #form-Cntainer {
+            background-color: white;
+            padding: 50px;
+            text-align: center;
+        }
+
+        input {
+            width: 200px;
+            margin: 10px 0px;
+            padding: 10px;
+            border: none;
+            outline: none;
+
+        }
+
+        input[type="submit"] {
+            width: 222px;
+            background-color: blueviolet;
+            color: white;
+        }
+
+        .error {
+            text-align: left;
+            color: red;
+            margin: 0px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+         img{
+            width: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+         }
+        .abc{
+            border: 2px solid black;
+
+        }.xyz{
+            border: 2px solid black;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="form-Cntainer">
+        <h2>Login</h2>
+        <form action="" onsubmit="return validateForm()">
+             <div class="xyz">
+            <input type="text" id="username" placeholder="UserName">
+            <p id="usernameError" class="error"></p>
+        </div>
+            <br>
+             <div class="abc">
+            <input type="password" id="password" placeholder="Password">
+             <img   id="img"  src="./images/eye-close.png" alt="">
+             <p id="passwordError" class="error"></p>
+            </div>
+            <br>
+
+            <input type="Submit">
+        </form>
+    </div>
+</body>
+<script>
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+    const image = document.getElementById("img");
+    let flag = 1;
+
+
+    function validateForm() {
+        if (username.value === "") {
+            document.getElementById("usernameError").innerHTML = "Username is Empty";
+            flag = 0;
+        }
+        else if (username.value.length < 10) {
+            document.getElementById("usernameError").innerHTML = "Username is at least 10 Characters";
+            flag = 0;
+
+
+        } else {
+            document.getElementById("usernameError").innerHTML = "";
+            flag = 1;
+
+        }
+        if (password.value === '') {
+            document.getElementById("passwordError").innerHTML = "Password is Empty";
+            flag = 0;
+
+
+        } else if (password.value.length < 8) {
+            document.getElementById("passwordError").innerHTML = "Password is at least 8 Characters";
+            flag = 0;
+
+
+        } else {
+            document.getElementById("passwordError").innerHTML = "";
+            flag = 1;
+
+        }
+        if (flag) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    image.addEventListener("click",function () {
+        if(password.type == "password"){
+            password.type ="text";
+            image.src = "eye-open.png"
+        }else{
+            password.type="password";
+            image.src ="eye-close.png"
+
+        }
+    })
+  
+</script>
+
+</html>
